@@ -5,6 +5,7 @@ import { db } from "../../lib/firebase";
 import { collection, addDoc, query, orderBy, onSnapshot } from "firebase/firestore";
 import Image from "next/image";
 import { VscSend } from "react-icons/vsc";
+import { FaGoogle } from "react-icons/fa6";
 
 const page = () => {
   const { data: session } = useSession();
@@ -81,8 +82,9 @@ const page = () => {
             onClick={() => {
               signIn("google");
             }}
+            className="bg-purple-100 flex gap-2 p-3 rounded-md shadow-inner text-xl items-center text-purple-500"
           >
-            Sign In
+            <FaGoogle/> Sign In with Google
           </button>
         </div>
       )}

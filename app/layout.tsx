@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`${poppins} antialiased`}
       >
         <AuthProvider>
-          <div className="hidden md:flex">
+          <div className="hidden min-w-full md:flex">
             <Slidebar/>
             {children}
           </div>
