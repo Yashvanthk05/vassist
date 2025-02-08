@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: white) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #000000ec;
     --foreground: #ededed;
@@ -227,7 +227,7 @@ body {
 }
 
 .item{
-  height: 200px;
+  height: 100px;
   width: 150px;
   display: flex;
   flex-direction: column;

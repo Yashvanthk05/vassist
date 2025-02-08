@@ -8,6 +8,12 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import { FcFolder, FcOpenedFolder } from 'react-icons/fc';
+import { VscFolder } from 'react-icons/vsc';
+import { PiFolderDuotone, PiFolderOpenDuotone, PiFolderSimpleDuotone } from 'react-icons/pi';
+import { RiFolderChartFill } from 'react-icons/ri';
+import { IoFolderOpen, IoFolderSharp } from 'react-icons/io5';
+import { FaFileAlt } from 'react-icons/fa';
 
 const GOOGLE_DRIVE_API_KEY = "AIzaSyAuItmFqEklJP21-qGk1TyS87XlSORhMmI";
 const ROOT_FOLDER_ID = "1Z4tBts_Y55n4m8yRSyV7WzKocVHpi9yC";
@@ -143,13 +149,7 @@ const Page = () => {
                     }}
                     className="item"
                   >
-                    <Image
-                        src="/folder.png"
-                        alt="folder"
-                        height={500}
-                        width={500}
-                        className='filelogo'
-                      />
+                      <FcFolder color='rgb(0,0,0,0.8)' size={72}/>
                     <span>
                       {item.name.length > 8 ? `${item.name.slice(0, 12)}...`: item.name}
                     </span>
@@ -159,23 +159,15 @@ const Page = () => {
                     {item.name}
                   </HoverCardContent>
                   </HoverCard>
-                ) : (item.mimeType === "application/pdf" || item.mimeType==="application/ppt") ? (
+                ) : (item.mimeType === "application/pdf" || item.mimeType === "application/vnd.ms-powerpoint" || item.mimeType === "application/vnd.openxmlformats-officedocument.presentationml.presentation") ? (
                   <a
                     href={getPdfViewLink(item.id)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full p-4 flex flex-col items-center gap-2 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="w-full p-4 flex flex-col flex-wrap items-center gap-2 rounded-lg hover:bg-purple-200 transition-colors"
                   >
-                    <div className="relative w-12 h-12">
-                      <Image
-                        src="/pdf.png"
-                        alt="PDF"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
-                    <span className="text-green-500 text-sm text-center break-words">
+                    <FaFileAlt size={54} color='rgb(98,0,255,0.6)'/>
+                    <span>
                       {item.name}
                     </span>
                   </a>

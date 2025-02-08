@@ -8,6 +8,8 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import { FcFolder } from 'react-icons/fc';
+import { FaFileAlt } from 'react-icons/fa';
 
 // Keep API key in code for debugging (move to env later)
 const GOOGLE_DRIVE_API_KEY = "AIzaSyAuItmFqEklJP21-qGk1TyS87XlSORhMmI";
@@ -145,13 +147,7 @@ const Page = () => {
                     }}
                     className="item"
                   >
-                    <Image
-                        src="/folder.png"
-                        alt="folder"
-                        height={500}
-                        width={500}
-                        className='filelogo'
-                      />
+                    <FcFolder color='rgb(0,0,0,0.8)' size={72}/>
                     <span>
                       {item.name.length > 8 ? item.name.slice(0, 8): item.name}
                     </span>
@@ -161,23 +157,17 @@ const Page = () => {
                     {item.name}
                   </HoverCardContent>
                   </HoverCard>
-                ) : item.mimeType === "application/pdf" ? (
+                ) : (item.mimeType === "application/pdf" || item.mimeType === "application/vnd.ms-powerpoint" || item.mimeType === "application/vnd.openxmlformats-officedocument.presentationml.presentation") ? (
                   <a
                     href={getPdfViewLink(item.id)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full p-4 flex flex-col items-center gap-2 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="w-full p-4 flex flex-col items-center gap-2 rounded-lg hover:bg-purple-200 transition-colors"
                   >
                     <div className="relative w-12 h-12">
-                      <Image
-                        src="/pdf.png"
-                        alt="PDF"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
+                      <FaFileAlt size={54} color="rgb(98,0,255,0.5)"/>
                     </div>
-                    <span className="text-green-500 text-sm text-center break-words">
+                    <span className="text-purple-500 text-sm text-center break-words">
                       {item.name}
                     </span>
                   </a>
