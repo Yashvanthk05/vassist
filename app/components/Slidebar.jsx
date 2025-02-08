@@ -25,7 +25,7 @@ const Slidebar = () => {
         </div>
         <div className='sideitem'>
             <span className='sidehead'>General</span>
-            <Link href="/contribute" className='sidei'><IoCloudUpload/> Contribute</Link>
+            <Link href="/forum" className='sidei'><IoCloudUpload/> Contribute</Link>
         </div>
         <div className='sideitem'>
             <span className='sidei'><FaDownload/> Download App</span>

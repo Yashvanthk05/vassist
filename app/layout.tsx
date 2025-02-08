@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Slidebar from "./components/Slidebar";
+import AuthProvider from './components/AuthProvider'
+import Navbar from './components/Navbar'
+import Navigation from './components/Navigation'
 
 const geistSans = Poppins({
   weight:["100","200","300","400","500","600","700","800"]
@@ -22,8 +25,17 @@ export default function RootLayout({
       <body
         className={`${geistSans} antialiased`}
       >
-        <Slidebar/>
-        {children}
+        <AuthProvider>
+          <div className="hidden md:flex">
+            <Slidebar/>
+            {children}
+          </div>
+          <div className="flex flex-col gap-2 min-w-full md:hidden">
+            <Navbar/>
+            {children}
+            <Navigation/>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
