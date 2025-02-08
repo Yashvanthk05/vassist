@@ -1,5 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const handler = NextAuth({
   providers: [
@@ -8,7 +11,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTHSECRET,
 });
 
 export { handler as GET, handler as POST };
