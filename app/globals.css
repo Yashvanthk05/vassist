@@ -15,6 +15,7 @@ body {
   padding: 15px;
   height: 100dvh;
   gap: 10px;
+  overflow: hidden;
 }
 
 .side{
@@ -87,6 +88,7 @@ body {
   overflow: scroll;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .pagetop{
@@ -129,6 +131,17 @@ body {
   width: 100%;
   border-radius: 10px;
   height: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+  background-color: rgb(132, 0, 255,0.2);
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(132, 0, 255,0.7);
+  border-radius: 20px;
 }
 
 .items{

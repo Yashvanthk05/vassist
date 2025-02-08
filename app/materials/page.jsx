@@ -159,7 +159,7 @@ const Page = () => {
                     {item.name}
                   </HoverCardContent>
                   </HoverCard>
-                ) : item.mimeType === "application/pdf" ? (
+                ) : (item.mimeType === "application/pdf" || item.mimeType==="application/ppt") ? (
                   <a
                     href={getPdfViewLink(item.id)}
                     target="_blank"
