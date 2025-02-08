@@ -68,7 +68,7 @@ const page = () => {
               />
               <button
                 type="submit"
-                className="ml-2 bg-purple-300 px-4 py-1 rounded"
+                className="ml-2 bg-neutral-300 px-4 py-1 rounded"
               >
                 <VscSend color="rgb(98,0,255)" size={24}/>
               </button>
@@ -82,7 +82,7 @@ const page = () => {
             onClick={() => {
               signIn("google");
             }}
-            className="bg-purple-100 flex gap-2 p-3 rounded-md shadow-inner text-xl items-center text-purple-500"
+            className="bg-neutral-100 flex gap-2 p-3 rounded-md shadow-inner text-xl items-center text-neutral-600"
           >
             <FaGoogle/> Sign In with Google
           </button>

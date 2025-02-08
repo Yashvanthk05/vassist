@@ -84,7 +84,7 @@ const Page = () => {
     <section className="sec">
       <div className="top shadow-inner">
         <div className="searchbar shadow-inner">
-          <FaMagnifyingGlass className="text-purple-300" />
+          <FaMagnifyingGlass className="text-neutral-500" />
           <input
             type="text"
             placeholder="Search by Subject Name/Code"
@@ -93,9 +93,7 @@ const Page = () => {
             ref={searchInputRef}
             className="flex-1 outline-none"
           />
-          <span className='bg-purple-300 text-purple-500 rounded px-2'>ctrl</span>
-          <span className='text-purple-400'>+</span>
-          <span className='bg-purple-300 text-purple-500 rounded px-2'>k</span>
+          <span className='bg-neutral-700 text-neutral-400 rounded px-2 hidden md:flex'>ctrl + k</span>
         </div>
       </div>
 
@@ -110,7 +108,7 @@ const Page = () => {
               setPath(newPaths[newPaths.length - 1]);
               setParentPaths(newPaths);
             }}
-            className="flex items-center gap-1 text-blue-500 hover:underline mb-4"
+            className="flex items-center gap-1 text-neutral-400 hover:underline mb-4"
           >
             <BiLeftArrowAlt size={20} /> Go Back
           </button>
@@ -162,13 +160,13 @@ const Page = () => {
                     href={getPdfViewLink(item.id)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full p-4 flex flex-col items-center gap-2 rounded-lg hover:bg-purple-200 transition-colors"
+                    className="w-full p-4 flex flex-col items-center gap-2 rounded-lg hover:bg-neutral-700 transition-colors"
                   >
                     <div className="relative w-12 h-12">
-                      <FaFileAlt size={54} color="rgb(98,0,255,0.5)"/>
+                      <FaFileAlt size={54} color="rgb(255,255,255,0.5)"/>
                     </div>
-                    <span className="text-purple-500 text-sm text-center break-words">
-                      {item.name}
+                    <span className="text-neutral-200 text-sm text-center break-words">
+                      {item.name.slice(0,15)}
                     </span>
                   </a>
                 ) : (

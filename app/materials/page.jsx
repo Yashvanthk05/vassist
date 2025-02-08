@@ -86,7 +86,7 @@ const Page = () => {
     <section className="sec">
       <div className="top shadow-inner">
         <div className="searchbar shadow-inner">
-          <FaMagnifyingGlass className="text-purple-300" />
+          <FaMagnifyingGlass className="text-neutral-400" />
           <input
             type="text"
             placeholder="Search by Subject Name/Code"
@@ -95,9 +95,7 @@ const Page = () => {
             ref={searchInputRef}
             className="flex-1 outline-none"
           />
-          <span className='bg-purple-300 text-purple-500 rounded px-2'>ctrl</span>
-          <span className='text-purple-400'>+</span>
-          <span className='bg-purple-300 text-purple-500 rounded px-2'>k</span>
+          <span className='bg-neutral-700 text-neutral-400 rounded px-2'>ctrl + k</span>
         </div>
       </div>
 
@@ -112,7 +110,7 @@ const Page = () => {
               setPath(newPaths[newPaths.length - 1]);
               setParentPaths(newPaths);
             }}
-            className="flex items-center gap-1 text-blue-500 hover:underline mb-4"
+            className="flex items-center gap-1 text-neutral-400 hover:underline mb-4"
           >
             <BiLeftArrowAlt size={20} /> Go Back
           </button>
@@ -147,11 +145,11 @@ const Page = () => {
                       setParentPaths([...parentPaths, item.id]);
                       setPath(item.id);
                     }}
-                    className="item"
+                    className="item hover:bg-neutral-700"
                   >
                       <FcFolder color='rgb(0,0,0,0.8)' size={72}/>
                     <span>
-                      {item.name.length > 8 ? `${item.name.slice(0, 12)}...`: item.name}
+                      {item.name.length > 8 ? `${item.name.slice(-9, -1)}`: item.name}
                     </span>
                   </button>
                   </HoverCardTrigger>
@@ -164,17 +162,18 @@ const Page = () => {
                     href={getPdfViewLink(item.id)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full p-4 flex flex-col flex-wrap items-center gap-2 rounded-lg hover:bg-purple-200 transition-colors"
+                    className="w-full p-4 flex flex-col flex-wrap items-center gap-2 rounded-lg hover:bg-neutral-700 transition-colors"
                   >
-                    <FaFileAlt size={54} color='rgb(98,0,255,0.6)'/>
+                    <FaFileAlt size={54} color='rgb(255,255,255,0.5)'/>
                     <span>
-                      {item.name}
+                      {item.name.slice(0,8)}
                     </span>
                   </a>
                 ) : (
                   <div className="w-full p-4 flex flex-col items-center gap-2">
                     <span className="text-sm text-center break-words">
-                      {item.name}
+                    <FaFileAlt size={54} color='rgb(255,255,255,0.5)'/>
+                      {item.name.slice(0,8)}
                     </span>
                   </div>
                 )}
