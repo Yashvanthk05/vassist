@@ -6,7 +6,8 @@ import AuthProvider from './components/AuthProvider'
 import Navbar from './components/Navbar'
 import Navigation from './components/Navigation'
 
-const geistSans = Poppins({
+const poppins = Poppins({
+  subsets:['latin','latin-ext'],
   weight:["100","200","300","400","500","600","700","800"]
 });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans} antialiased`}
+        className={`${poppins} antialiased`}
       >
         <AuthProvider>
           <div className="hidden md:flex">
