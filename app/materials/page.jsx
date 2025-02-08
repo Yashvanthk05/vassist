@@ -95,7 +95,7 @@ const Page = () => {
             ref={searchInputRef}
             className="flex-1 outline-none"
           />
-          <span className='bg-neutral-700 text-neutral-400 rounded px-2'>ctrl + k</span>
+          <span className='bg-neutral-700 text-neutral-400 rounded px-2 hidden md:flex'>ctrl + k</span>
         </div>
       </div>
 
