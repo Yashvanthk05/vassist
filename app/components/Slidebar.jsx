@@ -16,7 +16,7 @@ const Slidebar = () => {
     console.log(pathname);
   return (
     <div className='side'>
-        <span className='logo'><Image alt='logo' className='logoimg' src={'/VA.png'} height={500} width={500}/>VASSIST</span>
+        <span className='logo'><Image alt='logo' className='logoimg' src={'/VA.png'} height={10000} width={10000}/>SSIST</span>
         <div className='sideitem'>
             <span className='sidehead'>Menu</span>
             <Link href="/materials" className={pathname=="/materials"?`sideiactive sidei`:`sidei`}><BsFillGrid1X2Fill /> Materials</Link>
